@@ -86,10 +86,13 @@ export function parseJsonLdPage(text) {
   }
   const structuredVersion = html.match(/"version"\s*:\s*"v?([^"\s]+)"/i)?.[1];
   const fieldVersion = html.match(/<dt[^>]*>Version<\/dt>\s*<dd[^>]*>v?([^<\s]+)<\/dd>/i)?.[1];
+  const hasCanonicalNpmLink = html.includes(`npmjs.com/package/${PACKAGE_NAME}`);
   return {
     observedVersion: normalizeVersion(structuredVersion ?? fieldVersion),
-    npmPublished: html.includes(`npmjs.com/package/${PACKAGE_NAME}`),
-    detail: 'public plugin page',
+    npmPublished: hasCanonicalNpmLink,
+    detail: hasCanonicalNpmLink
+      ? 'public plugin page'
+      : 'page omits the canonical npm package link',
   };
 }
 

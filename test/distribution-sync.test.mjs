@@ -61,6 +61,15 @@ test('parses structured public directory pages', () => {
   });
 });
 
+test('reports a missing canonical npm link on structured public directory pages', () => {
+  const html = '<script type="application/ld+json">{"identifier":"dsh-mcp-connector","codeRepository":"https://github.com/duhu2000/dsh-mcp-connector","version":"0.2.59"}</script>';
+  assert.deepEqual(parseJsonLdPage(html), {
+    observedVersion: '0.2.59',
+    npmPublished: false,
+    detail: 'page omits the canonical npm package link',
+  });
+});
+
 test('detects stale dshbase version and false npm claim', () => {
   const parsed = parseDshbasePage('<a href="https://github.com/duhu2000/dsh-mcp-connector/releases/tag/v0.2.37">release</a><a href="https://www.npmjs.com/package/dsh-mcp-connector">npm</a><p>not published to npm</p>');
   assert.deepEqual(parsed, {
