@@ -114,3 +114,17 @@ Use one fixed baseline timestamp (`T0`), then review at `T+7` and `T+14`. Preser
 | First-time Issues / PRs |  |  |  | GitHub events reviewed for the exact interval |
 
 Do not calculate an exposure-to-install, download-to-connection, or download-to-first-call conversion rate from these proxies. If no explicit evidence exists, retain **No data** rather than replacing it with zero or an estimate. Record documentation changes and user-reported friction separately so a change in downloads is not automatically attributed to the latest copy or release.
+
+### 0.2.59 scheduled first-use checkpoints
+
+The fixed documentation baseline is `T0 = 2026-09-25 11:45 Asia/Shanghai`; the scheduled reviews are `T+7 = 2026-10-02` and `T+14 = 2026-10-09`. Future columns remain pending until each date. The scenario source is [`docs/tutorials/FIRST-SUCCESS-SCENARIOS.md`](tutorials/FIRST-SUCCESS-SCENARIOS.md); a saved connection or cached tool is not a successful call.
+
+| Evidence | T0 — 2026-09-25 | T+7 — 2026-10-02 | T+14 — 2026-10-09 | Rule |
+|---|---|---|---|---|
+| Enterprise-information read-only call | No data / pending authorized acceptance | Fill only after due date | Fill only after due date | Require provider-authorized account, Host approval and redacted result evidence |
+| Local intelligent-document call | No data / pending authorized sample | Fill only after due date | Fill only after due date | Record that the local Agent uploads the test file for remote processing |
+| Authorized office document/calendar call | No data / pending test tenant | Fill only after due date | Fill only after due date | Require isolated test scope and any administrator approval |
+| Draft publication | Not published | Fill only after due date | Fill only after due date | Record platform/account/post URL only after explicit channel authorization |
+| Friction observed | Installation/profile path verified in published 0.2.59 docs | Fill only after due date | Fill only after due date | Separate documentation friction from product/runtime failures |
+
+At each checkpoint record the exact npm/API window, cumulative Star/Fork timestamp, fixed Market query conditions, and explicit manual-acceptance evidence separately. Do not attribute a change in any proxy to these scenario documents without causal evidence.

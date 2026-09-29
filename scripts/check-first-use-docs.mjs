@@ -12,6 +12,9 @@ const PATHS = {
   json: 'docs/tutorials/JSON-MIGRATION.md',
   oauth: 'docs/tutorials/OAUTH-DIAGNOSTICS.md',
   tools: 'docs/tutorials/TOOL-SEARCH-RECOVERY.md',
+  scenarios: 'docs/tutorials/FIRST-SUCCESS-SCENARIOS.md',
+  statusCopy: 'docs/tutorials/TRUSTED-STATUS-COPY.md',
+  publicationDrafts: 'marketing/campaign-0.2.59/P1-SCENARIO-PUBLICATION-DRAFTS.md',
 };
 
 function requireText(path, text, expected) {
@@ -29,6 +32,13 @@ export async function checkFirstUseDocs() {
   for (const link of ['(JSON-MIGRATION.md)', '(OAUTH-DIAGNOSTICS.md)', '(TOOL-SEARCH-RECOVERY.md)']) {
     requireText(PATHS.entry, docs.entry, link);
   }
+  for (const link of ['(FIRST-SUCCESS-SCENARIOS.md)', '(TRUSTED-STATUS-COPY.md)']) {
+    requireText(PATHS.entry, docs.entry, link);
+    requireText(PATHS.readmeZh, docs.readmeZh, `docs/tutorials/${link.slice(1)}`);
+    requireText(PATHS.readmeEn, docs.readmeEn, `docs/tutorials/${link.slice(1)}`);
+  }
+  requireText(PATHS.userGuide, docs.userGuide, '(tutorials/FIRST-SUCCESS-SCENARIOS.md)');
+  requireText(PATHS.userGuide, docs.userGuide, '(tutorials/TRUSTED-STATUS-COPY.md)');
   for (const expected of [
     'dsh plugin --profile web add dsh-mcp-connector',
     'DSH Desktop 和 `dsh web` 都从本机 `web` profile 加载插件',
@@ -52,10 +62,56 @@ export async function checkFirstUseDocs() {
   }
 
   for (const expected of [
+    '企业信息只读查询',
+    '本地智能文档解析',
+    '授权办公文档或日程查询',
+    '本机进程 + 远程处理',
+    '无证据/待用户验收',
+    '(TRUSTED-STATUS-COPY.md)',
+  ]) {
+    requireText(PATHS.scenarios, docs.scenarios, expected);
+  }
+
+  for (const expected of [
+    '账号/组织：当前连接无法确认',
+    '授权状态未知',
+    'Host 注册状态未知',
+    '调用：无证据/待验收',
+    '管理员前提：待服务商确认',
+    '本机进程 + 远程处理',
+    '本次费用：无法由插件确认',
+    '检查时间：YYYY-MM-DD HH:mm:ss ±HH:mm',
+    '缓存参数结构已变化，可能影响既有调用；使用前请核对参数，并按 Host 要求重新确认。',
+    'Schema 不完整或缺少历史记录，无法判断兼容性。',
+    '仅为发现缓存；调用：无证据/待验收。',
+    'Schema 变化：检测到工具移除、必填参数新增、类型/枚举收窄或其他不兼容差异',
+    '当前 Schema 无法确认',
+    '工具副作用：服务未提供或 Host 未传递可靠标记',
+    '不为文案新增隐性用户跟踪',
+  ]) {
+    requireText(PATHS.statusCopy, docs.statusCopy, expected);
+  }
+
+  for (const expected of [
+    '仅本地/仓库草稿',
+    '不得自动公开发布',
+    'MCP连接器、MCP Server、连接管理、跨连接工具搜索、连接排障',
+    '2026-10-02',
+    '2026-10-09',
+    '不从下载量推算连接或首次调用',
+  ]) {
+    requireText(PATHS.publicationDrafts, docs.publicationDrafts, expected);
+  }
+
+  for (const expected of [
     '## 7/14-day first-use review template',
     'DSH Market/search impressions | No data',
     'First successful read-only calls | No data',
     'Do not calculate an exposure-to-install, download-to-connection, or download-to-first-call conversion rate',
+    '### 0.2.59 scheduled first-use checkpoints',
+    'T+7 = 2026-10-02',
+    'T+14 = 2026-10-09',
+    'Fill only after due date',
   ]) {
     requireText(PATHS.growth, docs.growth, expected);
   }

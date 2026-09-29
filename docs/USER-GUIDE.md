@@ -9,8 +9,9 @@
 - 已有其他客户端配置：从[迁移 `mcpServers` JSON](tutorials/JSON-MIGRATION.md)开始，逐项验证配置保存、工具发现/注册和只读调用。
 - OAuth 卡在注册、授权或刷新：看[OAuth 连接诊断](tutorials/OAUTH-DIAGNOSTICS.md)，先按阶段与稳定代码排查，不反复提交未获授权的账号。
 - 已连接多个服务却找不到工具：看[跨连接找工具与发现失败恢复](tutorials/TOOL-SEARCH-RECOVERY.md)。缓存可查不等于当前可调用。
+- 需要一条可复核任务：从[三个首次成功场景包](tutorials/FIRST-SUCCESS-SCENARIOS.md)选择企业信息、本地文档或授权办公数据的只读场景，并按[可信状态文案](tutorials/TRUSTED-STATUS-COPY.md)记录未知项和证据。
 
-这三篇是操作教程，不代表对所有服务商完成了真实业务调用验收；正式调用仍受服务商权限、费用与 DSH Host 审批约束。
+这些操作教程和场景包不代表对所有服务商完成了真实业务调用验收；正式调用仍受服务商权限、费用与 DSH Host 审批约束。
 
 ## 1. 安装、升级与重启
 
