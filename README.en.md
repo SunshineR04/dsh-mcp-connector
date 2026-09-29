@@ -40,7 +40,7 @@ Fully restart DeepSeek Harness Desktop or `dsh web` after installation or upgrad
 
 For a first successful use, confirm the connection and scope in Installed, find the expected tool and source in Tools, then complete one provider-permitted read-only call through the normal DSH Host approval flow. Cached visibility alone does not prove that a service is currently callable.
 
-First-success guide (Chinese): [install → connect → find a tool → make the first read-only call](docs/tutorials/README.md). Task details: [migrate `mcpServers` JSON](docs/tutorials/JSON-MIGRATION.md) · [diagnose OAuth](docs/tutorials/OAUTH-DIAGNOSTICS.md) · [find and recover tools](docs/tutorials/TOOL-SEARCH-RECOVERY.md).
+First-success guide (Chinese): [install → connect → find a tool → make the first read-only call](docs/tutorials/README.md). Task details: [three acceptance-ready scenarios](docs/tutorials/FIRST-SUCCESS-SCENARIOS.md) · [migrate `mcpServers` JSON](docs/tutorials/JSON-MIGRATION.md) · [diagnose OAuth](docs/tutorials/OAUTH-DIAGNOSTICS.md) · [find and recover tools](docs/tutorials/TOOL-SEARCH-RECOVERY.md) · [trusted status copy](docs/tutorials/TRUSTED-STATUS-COPY.md).
 
 ![43-second MCP Connector walkthrough](https://raw.githubusercontent.com/duhu2000/dsh-mcp-connector/main/docs/demo.gif)
 

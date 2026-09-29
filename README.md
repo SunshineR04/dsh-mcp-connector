@@ -40,7 +40,7 @@ dsh plugin --profile web add dsh-mcp-connector
 
 首次使用建议依次确认：连接已保存且范围正确 → “工具”页能找到预期工具与来源 → 在正常 DSH 会话中通过 Host 审批链完成一次服务商许可的只读调用。缓存可见不等于当前服务可调用。
 
-[首次成功入口：安装 → 连接 → 找到工具 → 首次只读调用](docs/tutorials/README.md)。按任务深入：[迁移现有 `mcpServers` JSON](docs/tutorials/JSON-MIGRATION.md) · [OAuth 授权诊断](docs/tutorials/OAUTH-DIAGNOSTICS.md) · [跨连接找工具与恢复](docs/tutorials/TOOL-SEARCH-RECOVERY.md)。
+[首次成功入口：安装 → 连接 → 找到工具 → 首次只读调用](docs/tutorials/README.md)。按任务深入：[三个可验收场景包](docs/tutorials/FIRST-SUCCESS-SCENARIOS.md) · [迁移现有 `mcpServers` JSON](docs/tutorials/JSON-MIGRATION.md) · [OAuth 授权诊断](docs/tutorials/OAUTH-DIAGNOSTICS.md) · [跨连接找工具与恢复](docs/tutorials/TOOL-SEARCH-RECOVERY.md) · [可信状态文案](docs/tutorials/TRUSTED-STATUS-COPY.md)。
 
 ![MCP 连接器 43 秒演示](https://raw.githubusercontent.com/duhu2000/dsh-mcp-connector/main/docs/demo.gif)
 

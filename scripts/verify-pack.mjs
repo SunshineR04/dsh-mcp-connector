@@ -23,7 +23,7 @@ const WHITELIST = [
   /^registry\/connectors\/[^/]+\.json$/,
   /^registry\/schema\/[^/]+\.json$/,
   /^docs\/(?:CLI-PROVIDERS|CONFIG-BACKUP|CONNECTION-SCOPES|DESKTOP-E2E|FIRST-CONTRIBUTION|MARKET-REGISTRATION|PLUGIN-UPDATE|STDIO-SUPPORT|TOOL-GOVERNANCE|USER-GUIDE)\.md$/,
-  /^docs\/tutorials\/(?:README|JSON-MIGRATION|OAUTH-DIAGNOSTICS|TOOL-SEARCH-RECOVERY)\.md$/,
+  /^docs\/tutorials\/(?:README|FIRST-SUCCESS-SCENARIOS|JSON-MIGRATION|OAUTH-DIAGNOSTICS|TOOL-SEARCH-RECOVERY|TRUSTED-STATUS-COPY)\.md$/,
   /^docs\/screenshots\/(?:README\.md|assets\.json|[^/]+\.(?:gif|jpe?g|png|svg|webp))$/,
   /^ui\/index\.html$/,
   /^ui\/assets\/[^/]+\.(?:svg|png|webp)$/,
@@ -56,9 +56,11 @@ if (!pack || !Array.isArray(pack.files)) {
 const files = pack.files.map((file) => file.path).sort();
 const requiredTutorials = [
   'docs/tutorials/README.md',
+  'docs/tutorials/FIRST-SUCCESS-SCENARIOS.md',
   'docs/tutorials/JSON-MIGRATION.md',
   'docs/tutorials/OAUTH-DIAGNOSTICS.md',
   'docs/tutorials/TOOL-SEARCH-RECOVERY.md',
+  'docs/tutorials/TRUSTED-STATUS-COPY.md',
 ];
 const missingTutorials = requiredTutorials.filter((file) => !files.includes(file));
 if (missingTutorials.length > 0) {
